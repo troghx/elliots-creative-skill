@@ -1,0 +1,4 @@
+interface:
+  display_name: "Elliot's Creative Skill"
+  short_description: "Creative web direction, color, Hugeicons and motion"
+  default_prompt: "Use $elliots-creative-skill to create or faithfully rebuild this website direction, define a semantic color and contrast system, plan meaningful Hugeicons, and implement the strongest result."
