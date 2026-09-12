@@ -1,0 +1,4 @@
+interface:
+  display_name: "Elliot's Creative — Redesign"
+  short_description: "Rediseños con carácter, utilidad y libertad visual"
+  default_prompt: "Usa $elliots-creative-redesign para mejorar esta interfaz existente sin perder su propósito ni sus funciones."
