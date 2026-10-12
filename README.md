@@ -11,6 +11,18 @@ La versión actual separa dos trabajos:
 | [`elliots-creative-skill`](elliots-creative-skill/SKILL.md) | Dirección visual original para un proyecto nuevo: sitios, landing pages, campañas o experiencias interactivas. |
 | [`elliots-creative-redesign`](elliots-creative-redesign/SKILL.md) | Rediseñar una app, sitio o flujo existente, mejorando su composición y uso sin perder su propósito ni sus funciones. |
 
+## Antes y después
+
+`elliots-creative-redesign` le quita lo *slop* a tu proyecto: si tu app se hizo rápido con IA y se ve como todas (tarjetas genéricas, degradados por todos lados, una plantilla de dashboard con tu logo), la skill le da una decisión de diseño real sin romper sus funciones.
+
+Capturas reales de proyectos rediseñados con esta skill, tomadas levantando el código de cada versión. Donde el original tenía datos privados se usaron datos de muestra.
+
+![NFT Studio: antes y después](docs/before-after/nft-studio.png)
+
+![InstaKeep: antes y después](docs/before-after/instakeep.png)
+
+![Jev Trading Lab: antes y después](docs/before-after/jev-trading-lab.png)
+
 ## Dale contexto a Codex primero
 
 Antes de invocar una skill, explica de qué va la app, sitio o experiencia que quieres crear o rediseñar. Comparte:
