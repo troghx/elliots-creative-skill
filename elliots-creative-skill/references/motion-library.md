@@ -221,3 +221,16 @@ Trigger only after confirmed success. Keep it under roughly 1.5–2.5 seconds, a
 - Test background-tab return and interrupted transitions.
 - Verify every state with long copy and 200% zoom.
 - Capture the darkest and lightest frames and test text contrast in both.
+
+## Tactile Continuity
+
+Learned from Gooey (see [design references](design-references.md)): animate the relationship between controls, not unrelated decoration. Before adding movement, name the state change it makes clearer or the tactile response it gives.
+
+- Keep text, icons and hit targets stable while surfaces move. Inputs, tables and money values stay legible throughout.
+- Opening and closing must describe the same spatial relationship. Interruption, keyboard input and repeated activation must resolve cleanly, without trapping focus or firing duplicate actions.
+- Provide a static or reduced-motion version with the same actions and labels. A plain CSS transition is often enough; a liquid or physics library needs its current docs, license, accessibility and performance checked in the target stack first.
+- Good fits: contextual quick actions, a playful toggle, the signature moment of a campaign. Poor fits: deforming prices, moving a target during confirmation, making a frequent action wait.
+
+## Product UI Timing
+
+For repeat-use interfaces, borrow BoardUI's quiet language (details in [BoardUI](boardui.md)): about 150ms for hover and menus, about 300ms for modals, entrances that fade with a slight scale and a blur of a few pixels, exits faster than entrances, press feedback as a color step rather than a shrink. Save narrative timing for marketing surfaces.

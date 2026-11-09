@@ -1,6 +1,6 @@
 # Reference notes — observed 2026-09-04
 
-These are bounded observations and transferable design interpretations, not template requirements. Refresh a reference when matching its current details. Read only the relevant section.
+These are bounded observations and transferable design interpretations, not template requirements. Refresh a reference when matching its current details. Read only the relevant section. Newer references have their own files: [BoardUI](boardui.md) for components and [Kenji Lambert](kenji-lambert.md) for authored, playful devices.
 
 ## Cofounder — https://cofounder.co/
 
@@ -24,7 +24,7 @@ Observed public catalog and thumbnails: featured compositions range from softwar
 
 Transfer: use a consistent family of proportions, type, imagery and controls. For app redesigns, inspect UI-relevant examples and learn hierarchy rather than transplanting a landing-page block. A calculator promo is not evidence of a usable everyday calculator.
 
-No fixed catalog counts are needed. Do not bypass premium access, purchase anything without authorization or copy unlicensed assets. Existing historical Jiro notes in the original creative skill are dated and optional, not a requirement to use their hero patterns.
+No fixed catalog counts are needed. Do not bypass premium access, purchase anything without authorization or copy unlicensed assets. The longer [Jiro audit](jiro-audit.md) is dated and optional, not a requirement to use their hero patterns.
 
 ## Picking an ingredient
 

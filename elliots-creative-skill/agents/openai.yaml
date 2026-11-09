@@ -1,4 +1,4 @@
 interface:
   display_name: "Elliot's Creative"
-  short_description: "Dirección visual original sin una estética fija"
-  default_prompt: "Usa $elliots-creative-skill para desarrollar una dirección original adecuada a este proyecto."
+  short_description: "Entrevista, tres direcciones y componentes reales de BoardUI para crear o rediseñar"
+  default_prompt: "Usa $elliots-creative-skill para crear o rediseñar esta interfaz: primero hazme las preguntas necesarias y luego propón al menos tres direcciones distintas."
