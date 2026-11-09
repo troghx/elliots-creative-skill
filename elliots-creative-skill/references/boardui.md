@@ -2,22 +2,31 @@
 
 [BoardUI](https://www.boardui.com/) is a React + Tailwind CSS v4 design system for dashboards and agentic interfaces, built on React Aria Components and drawn in Figma first. Components install as **source you own**; there is no runtime package. Counts and the free/Pro split change: refresh from the registry or MCP before relying on a specific item.
 
-## Access, from best to plainest
+## Read the code: no CLI, MCP or install needed
 
-1. **MCP server** (when the client has it): `claude mcp add boardui -- npx -y boardui@latest mcp`. Tools: `list_components`, `get_component`, `get_usage_examples`, `install_components`, `init_boardui`, `get_theme`, `install_rules`, `license_status`. Restart the session after adding it; tools bind at session start.
-2. **Public registry** (shadcn schema): `https://www.boardui.com/r/registry.json` lists the free items; `https://www.boardui.com/r/<name>.json` has each item's description, dependencies, usage example and source.
-3. **CLI:** `npx boardui@latest init --yes` once, then `npx boardui@latest add <name> [...] --yes`. Keep `--yes`: without a terminal the CLI exits with code 1 instead of prompting. Dependencies resolve on their own.
-4. **Catalog and docs:** https://www.boardui.com/components and https://www.boardui.com/llms.txt.
+The free source is MIT and public. You can read any free component in full with a plain web fetch (WebFetch, curl, or the browser), in any stack and any client:
 
-BoardUI also publishes its own agent skill (`npx boardui@latest skill`) with the full catalog and its rules. Install it in a project that adopts BoardUI; this skill decides *what* to build, theirs knows *how* BoardUI wants it built.
+1. **Index:** `https://www.boardui.com/r/registry.json` lists every free item: name, title, description, npm `dependencies`, `registryDependencies` and file paths (no code).
+2. **One component:** `https://www.boardui.com/r/<name>.json` carries the complete source in `files[].content`, plus `meta.example` (a usage example), `meta.snippets` (variants, sizes, icons) and `meta.docsUrl`. Follow `registryDependencies` the same way: `cx`, `globals`, and `theme` (`styles/theme.css`, every token) and `typography` are items too.
+3. **Everything at once:** https://github.com/BoardUI/boardui mirrors the free source under MIT. Shallow-clone it into a scratch folder when you need to search across components (how every control draws focus, every timing value). It can lag the registry; when they differ, the registry wins.
+4. **See it running:** open `meta.docsUrl` in a browser. On a free component, the developer tools show what the source does live: DOM and ARIA structure, resolved CSS variables, computed sizes, and transition and animation timing. Use them to judge feel and states; take code from the source above, not from the compiled page.
+5. **Catalog:** https://www.boardui.com/components and https://www.boardui.com/llms.txt (maps item names to doc pages; a few differ, such as `agent-chat` → `chat-starter`).
 
-Installs send anonymous telemetry (component names, versions). Set `BOARDUI_TELEMETRY_DISABLED=1` if the user prefers not to.
+Read the source before designing around a component: its anatomy, props, states and motion values decide what you can bend.
+
+## Bring it into a project
+
+- **By hand:** write each `files[].content` to its `target` path, do the same for every `registryDependencies` item (`theme`, `typography`, `globals` and `cx` first, or components render unstyled), then add the npm `dependencies` with the project's package manager. Imports expect the `@/` alias.
+- **CLI, when available:** `npx boardui@latest init --yes` once, then `npx boardui@latest add <name> [...] --yes`. Keep `--yes`: without a terminal the CLI exits with code 1 instead of prompting. Installs send anonymous telemetry (component names, versions); set `BOARDUI_TELEMETRY_DISABLED=1` if the user prefers not to.
+- **MCP, when connected:** `list_components`, `get_component`, `get_usage_examples`, `install_components`, `init_boardui`, `get_theme`, `install_rules`, `license_status`. Setup: `claude mcp add boardui -- npx -y boardui@latest mcp`, then restart the session.
+
+BoardUI also publishes its own agent skill (`npx boardui@latest skill`) with its catalog and rules. In a project that adopts BoardUI it complements this one: this skill decides *what* to build, theirs knows *how* BoardUI wants it built.
 
 ## When it fits
 
 - **Install:** React 19 + Tailwind v4 (Next.js, Vite, React Router, Astro with React). Imports expect the `@/` alias.
-- **Ask first:** the project already has a design system. `init` writes `styles/` (theme, typography, globals), `utils/cx`, and an always-on section in `AGENTS.md` plus `.cursor/rules/`. Mixing two token systems is worse than either.
-- **Reference only:** Vue, Svelte, plain HTML/CSS, Tailwind v3 or a non-web stack. Study the item's anatomy, states and motion in its docs page and rebuild natively.
+- **Ask first:** the project already has a design system. `init` (or the `theme`, `typography` and `globals` items) writes `styles/`, `utils/cx`, and with the CLI an always-on section in `AGENTS.md` plus `.cursor/rules/`. Mixing two token systems is worse than either.
+- **Port:** Vue, Svelte, plain HTML/CSS, Tailwind v3 or a non-web stack. Read the free item's source and docs page, then translate it into the project's own primitives; MIT allows it. Keep the behavior React Aria provided (keyboard, focus, ARIA) with the stack's equivalent.
 
 ## Component map by need
 
@@ -59,8 +68,9 @@ A BoardUI screen with a new logo is not a design. Change at least the layers the
 
 ## Rules
 
-- Install before rebuilding. Do not hand-write a lookalike of a component the registry ships.
-- **PRO without a license:** do not fetch its source or recreate it from screenshots. Tell the user what it does and offer three paths: activate a license (`npx boardui@latest login <key>` or MCP `activate_license`; the user supplies the key), compose from free parts, or design an original component.
+- Read and reuse before rebuilding. Do not hand-write a lookalike of a component the registry ships.
+- **Free vs Pro:** the free source is MIT; Pro source is paid and licensed per developer ([license](https://www.boardui.com/license)). Pro demos run on public pages, so their compiled code reaches the browser, but seeing it is not a license to use it.
+- **PRO without a license:** do not take its code, markup or styles by any route: developer tools, page bundles, source maps, network responses, or rebuilding it from screenshots. Look at the demo only to tell the user what it does, then offer three paths: activate a license (`npx boardui@latest login <key>` or MCP `activate_license`; the user supplies the key), compose from free parts, or design an original component.
 - React Aria tables (`table`, `data-table`) must render from a `"use client"` module, or they show headers with no columns.
 - After `init`, wire the global stylesheet and the font in the root layout, or text falls back to the system font.
 - Never paste a license key into code, commits or logs.

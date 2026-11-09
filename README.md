@@ -10,7 +10,7 @@ La v2 junta todo en una sola skill, [`elliots-creative-skill`](elliots-creative-
 
 1. **Primero pregunta.** Antes de diseñar, el agente revisa lo que ya existe y hace sólo las preguntas que faltan: ¿es una herramienta que usas a diario?, ¿una landing que vende?, ¿una campaña?, ¿un portafolio? Con las respuestas escribe un brief de cinco líneas.
 2. **Clasifica la superficie.** Una herramienta prioriza velocidad y claridad; una landing, una conversión; una campaña o un portafolio, personalidad y memoria.
-3. **Usa componentes reales de [BoardUI](https://www.boardui.com/).** Si el proyecto es React 19 + Tailwind v4, busca e instala los componentes que necesita con su MCP, su registro público o su CLI, en lugar de inventar imitaciones. En otros stacks lo usa como referencia. Respeta lo que es Pro.
+3. **Usa componentes reales de [BoardUI](https://www.boardui.com/).** El código de todos sus componentes gratis es público (MIT): el agente lo lee completo desde su registro o su [repo en GitHub](https://github.com/BoardUI/boardui), sin CLI ni MCP, y los ve funcionando en el navegador. En React 19 + Tailwind v4 los mete al proyecto tal cual; en otros stacks los traduce. Los Pro son de paga: sin licencia no toma su código por ninguna vía.
 4. **Propone al menos tres direcciones distintas.** No son tres paletas sobre el mismo layout: cambian estructura, tipografía, material, movimiento y momento memorable. Recomienda una y espera tu elección.
 5. **Crea con libertad.** BoardUI es el piso, no el techo: el agente cambia sus tokens, edita el código de los componentes, inventa piezas nuevas y mezcla recursos expresivos aprendidos del portafolio de [Kenji Lambert](https://www.kenjilambert.com/), sin copiarlo.
 6. **Verifica lo real.** Corre la interfaz y revisa la acción principal, los estados, el teclado, el contraste y el movimiento reducido.
@@ -73,7 +73,7 @@ https://github.com/troghx/elliots-creative-skill/tree/main/elliots-creative-skil
 
 También puedes copiar la carpeta `elliots-creative-skill/` dentro de `~/.codex/skills/` (Codex) o `~/.claude/skills/` (Claude Code).
 
-Opcional, para que el agente instale componentes de BoardUI sin pasar por la terminal: agrega su servidor MCP (`claude mcp add boardui -- npx -y boardui@latest mcp` en Claude Code; ver [su guía](https://www.boardui.com/mcp) para otros clientes). Sin MCP, la skill usa el registro público y la CLI.
+No necesitas instalar nada de BoardUI: la skill lee el código de los componentes directo de su registro público. Su servidor MCP (`claude mcp add boardui -- npx -y boardui@latest mcp`; ver [su guía](https://www.boardui.com/mcp)) y su CLI son atajos opcionales.
 
 ## Filosofía
 
